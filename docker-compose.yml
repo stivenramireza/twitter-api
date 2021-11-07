@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  twitter-api:
+    image: stivenramireza/twitter-api:latest
+    ports:
+      - "8000:8000"
