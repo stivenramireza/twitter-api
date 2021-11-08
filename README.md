@@ -3,7 +3,7 @@
 Building Twitter API using FastAPI framework.
 
 <p align="center">
-<img src="https://fastapi.tiangolo.com/img/index/index-04-swagger-03.png">
+<img src="https://user-images.githubusercontent.com/31974084/140669155-cc9f1e0a-d76e-4479-9c3d-1b883821782b.png">
 </p>
 
 ## Run API in development mode
