@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, EmailStr
 
 
 class UserBase(BaseModel):
-    user_id = UUID = Field(...)
+    user_id: UUID = Field(...)
     email: EmailStr = Field(...)
 
 
@@ -17,4 +17,4 @@ class UserLogin(UserBase):
 class User(UserBase):
     first_name: str = Field(..., min_length=1, max_length=50)
     last_name: str = Field(..., min_length=1, max_length=50)
-    birth_date = Optional[date] = Field(default=None)
+    birth_date: Optional[date] = Field(default=None)
