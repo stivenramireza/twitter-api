@@ -3,7 +3,6 @@ from typing import List, Dict
 from fastapi import APIRouter
 from fastapi import status
 
-from src.main import app
 from src.models.tweet_model import Tweet
 
 
