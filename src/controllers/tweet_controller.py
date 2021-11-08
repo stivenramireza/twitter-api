@@ -4,6 +4,7 @@ from fastapi import APIRouter
 from fastapi import status
 
 from src.models.tweet_model import Tweet
+from src.services import tweet_service
 
 
 router = APIRouter(prefix="/tweets", tags=["Tweets"])
@@ -16,7 +17,8 @@ router = APIRouter(prefix="/tweets", tags=["Tweets"])
     summary="Show all tweets",
 )
 def show_all_tweets() -> Dict[str, any]:
-    pass
+    tweets = tweet_service.get_all_tweets()
+    return tweets
 
 
 @router.post(
@@ -25,8 +27,9 @@ def show_all_tweets() -> Dict[str, any]:
     status_code=status.HTTP_201_CREATED,
     summary="Post a tweet",
 )
-def post():
-    pass
+def post(tweet: Tweet) -> Dict[str, any]:
+    posted_tweet = tweet_service.post_tweet(tweet)
+    return posted_tweet
 
 
 @router.get(
@@ -35,7 +38,7 @@ def post():
     status_code=status.HTTP_200_OK,
     summary="Show a tweet",
 )
-def show_tweet() -> Dict[str, any]:
+def show_tweet() -> None:
     pass
 
 
@@ -45,7 +48,7 @@ def show_tweet() -> Dict[str, any]:
     status_code=status.HTTP_200_OK,
     summary="Update a tweet",
 )
-def update_tweet():
+def update_tweet() -> None:
     pass
 
 
@@ -55,5 +58,5 @@ def update_tweet():
     status_code=status.HTTP_200_OK,
     summary="Delete a tweet",
 )
-def delete_tweet():
+def delete_tweet() -> None:
     pass

@@ -1,1 +1,28 @@
-[]
+[
+    {
+        "tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "content": "This is a tweet example",
+        "created_at": "2021-11-07 21:43:14.141764",
+        "updated_at": "2021-11-07 21:43:14.141777",
+        "by": {
+            "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "email": "stivenramireza@gmail.com",
+            "first_name": "Stiven",
+            "last_name": "Ram\u00edrez Arango",
+            "birth_date": "1998-08-13"
+        }
+    },
+    {
+        "tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "content": "This is another tweet example",
+        "created_at": "2021-11-07 21:43:14.141764",
+        "updated_at": "2021-11-07 21:43:14.141777",
+        "by": {
+            "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "email": "sobe4264@gmail.com",
+            "first_name": "Sobeida",
+            "last_name": "Arango Arias",
+            "birth_date": "1964-12-03"
+        }
+    }
+]

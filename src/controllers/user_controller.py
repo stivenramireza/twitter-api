@@ -3,7 +3,9 @@ from typing import List, Dict
 from fastapi import APIRouter
 from fastapi import status
 
-from src.models.user_model import User
+from src.models.user_model import User, UserRegister
+from src.services import user_service
+from src.utils.logger import logger
 
 
 router = APIRouter(prefix="/users", tags=["Users"])
@@ -15,7 +17,7 @@ router = APIRouter(prefix="/users", tags=["Users"])
     status_code=status.HTTP_201_CREATED,
     summary="Register a USER",
 )
-def signup() -> Dict[str, any]:
+def signup(user: UserRegister) -> Dict[str, any]:
     """
     Signup
 
@@ -30,9 +32,10 @@ def signup() -> Dict[str, any]:
     - email: EmailStr
     - first_name: str
     - last_name: str
-    - birth_date: date
+    - birth_date: datetime
     """
-    pass
+    registered_user = user_service.register_user(user)
+    return registered_user
 
 
 @router.post(
@@ -52,7 +55,8 @@ def login() -> Dict[str, any]:
     summary="Show all users",
 )
 def show_all_users() -> Dict[str, any]:
-    pass
+    users = user_service.get_all_users()
+    return users
 
 
 @router.get(

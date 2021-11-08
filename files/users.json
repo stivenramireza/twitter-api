@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "password": "stivenramireza",
+        "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "email": "stivenramireza@gmail.com",
+        "first_name": "Stiven",
+        "last_name": "Ram\u00edrez Arango",
+        "birth_date": "1998-08-13"
+    },
+    {
+        "password": "sobearangoa",
+        "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "email": "sobe4264@gmail.com",
+        "first_name": "Sobeida",
+        "last_name": "Arango Arias",
+        "birth_date": "1964-12-03"
+    }
+]
