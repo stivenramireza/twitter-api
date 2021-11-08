@@ -6,7 +6,7 @@ from fastapi import status
 from src.models.user_model import User
 
 
-router = APIRouter(tags=["Users"])
+router = APIRouter(prefix="/users", tags=["Users"])
 
 
 @router.post(
@@ -16,6 +16,20 @@ router = APIRouter(tags=["Users"])
     summary="Register a USER",
 )
 def signup() -> Dict[str, any]:
+    """
+    This path operation registers a user in the app
+
+    Parameters:
+        - Request body parameter
+            - user: UserRegister
+
+    Returns a JSON with the basic user information
+        - user_id: UUID
+        - email: EmailStr
+        - first_name: str
+        - last_name: str
+        - birth_date: date
+    """
     pass
 
 
@@ -30,7 +44,7 @@ def login() -> Dict[str, any]:
 
 
 @router.get(
-    path="/users",
+    path="/",
     response_model=List[User],
     status_code=status.HTTP_200_OK,
     summary="Show all users",
@@ -40,7 +54,7 @@ def show_all_users() -> Dict[str, any]:
 
 
 @router.get(
-    path="/users/{user_id}",
+    path="/{user_id}",
     response_model=User,
     status_code=status.HTTP_200_OK,
     summary="Show a user",
@@ -50,7 +64,7 @@ def show_user() -> Dict[str, any]:
 
 
 @router.put(
-    path="/users/{user_id}/update",
+    path="/{user_id}/update",
     response_model=User,
     status_code=status.HTTP_200_OK,
     summary="Update a user",
@@ -61,7 +75,7 @@ def update_user() -> Dict[str, any]:
 
 
 @router.delete(
-    path="/users/{user_id}/delete",
+    path="/{user_id}/delete",
     response_model=User,
     status_code=status.HTTP_200_OK,
     summary="Delete a user",

@@ -10,7 +10,7 @@ class UserBase(BaseModel):
     email: EmailStr = Field(...)
 
 
-class UserLogin(UserBase):
+class UserPassword(BaseModel):
     password: str = Field(..., min_length=8)
 
 
@@ -18,3 +18,11 @@ class User(UserBase):
     first_name: str = Field(..., min_length=1, max_length=50)
     last_name: str = Field(..., min_length=1, max_length=50)
     birth_date: Optional[date] = Field(default=None)
+
+
+class UserLogin(UserBase, UserPassword):
+    pass
+
+
+class UserRegister(User, UserPassword):
+    pass

@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from src.controllers import user_controller, tweet_controller
 
 
-app = FastAPI()
+app = FastAPI(title="Twitter API")
 
 
 @app.get(path="/", tags=["Home"])

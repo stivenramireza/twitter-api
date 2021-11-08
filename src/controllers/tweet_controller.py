@@ -6,7 +6,7 @@ from fastapi import status
 from src.models.tweet_model import Tweet
 
 
-router = APIRouter(tags=["Tweets"])
+router = APIRouter(prefix="/tweets", tags=["Tweets"])
 
 
 @router.get(
@@ -30,7 +30,7 @@ def post():
 
 
 @router.get(
-    path="/tweets/{tweet_id}",
+    path="/{tweet_id}",
     response_model=Tweet,
     status_code=status.HTTP_200_OK,
     summary="Show a tweet",
@@ -40,7 +40,7 @@ def show_tweet() -> Dict[str, any]:
 
 
 @router.put(
-    path="/tweets/{tweet_id}/update",
+    path="/{tweet_id}/update",
     response_model=Tweet,
     status_code=status.HTTP_200_OK,
     summary="Update a tweet",
@@ -50,7 +50,7 @@ def update_tweet():
 
 
 @router.delete(
-    path="/tweets/{tweet_id}/delete",
+    path="/{tweet_id}/delete",
     response_model=Tweet,
     status_code=status.HTTP_200_OK,
     summary="Delete a tweet",
