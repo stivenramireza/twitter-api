@@ -1,17 +1,16 @@
+from typing import Dict
+
 from fastapi import FastAPI
 
-from src.utils.logger import logger
-
-import uvicorn
+from src.controllers import user_controller, tweet_controller
 
 
 app = FastAPI()
 
-
-def main() -> None:
-    logger.info(f"Twitter API is running at port {PORT} in {ENV} mode")
-    uvicorn.run(app, host="0.0.0.0", port=PORT)
+app.include_router(user_controller.router)
+app.include_router(tweet_controller.router)
 
 
-if __name__ == "__main__":
-    main()
+@app.get(path="/")
+def root() -> Dict[str, any]:
+    return {"message": "Twitter API is running successfully"}
