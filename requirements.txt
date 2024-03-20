@@ -1,4 +1,4 @@
 fastapi==0.70.0
 uvicorn==0.15.0
-black==21.10b0
+black==24.3.0
 pydantic[email]==1.8.2
